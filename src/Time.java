@@ -18,29 +18,29 @@ public class Time {
 
     public Time() {
         System.out.println("the constructors is called.");//برای اطمینان از اجرای سازنده
-        this.hour = 0;
-        this.minute = 0;
-        this.second = 0;
+        hour = 0;
+        minute = 0;
+        second = 0;
     }
 
     public Time(int h, int m, int s) {
         //System.out.println("the constructors is called.");
-        this.setTime(h, m, s);
+        setTime(h, m, s);
     }
 
     //clone
     public Time(Time t) {
-        this.hour = t.hour;
-        this.minute = t.minute;
-        this.second = t.second;
+        hour = t.hour;
+        minute = t.minute;
+        second = t.second;
     }
 
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@setters
     public void setTime(int h, int m, int s) {
         if ((h >= 0 && h < 24) && (m >= 0 && m < 60) && (s >= 0 && s < 60)) {
-            this.hour = h;
-            this.minute = m;
-            this.second = s;
+            hour = h;
+            minute = m;
+            second = s;
         } else {
             System.err.println("the time is invalid!!! Timer not set");
         }
@@ -66,11 +66,11 @@ public class Time {
     }
 
     public int getHour() {
-        return this.hour;
+        return hour;
     }
 
     public int getMinuts() {
-        return this.minute;
+        return minute;
     }
 
     public int getSecond() {
