@@ -36,27 +36,35 @@ public class Time {
     }
 
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@setters
-    public void setTime(int h, int m, int s) {
-        if ((h >= 0 && h < 24) && (m >= 0 && m < 60) && (s >= 0 && s < 60)) {
-            hour = h;
-            minute = m;
-            second = s;
-        } else {
-            System.err.println("the time is invalid!!! Timer not set");
-        }
-
-    }
-
     public void setHour(int h) {
-        setTime(h, this.minute, this.second);
+        if ((h >= 0 && h < 24)) {
+            hour = h;
+            
+        } else {
+            System.err.println("the Hour is invalid!!! Timer not set");
+        }
     }
 
     public void setMinute(int m) {
-        setTime(this.hour, m, this.second);
+        if (m >= 0 && m < 60) {
+            minute = m;
+        } else {
+            System.err.println("the Minute is invalid!!! Timer not set");
+        }
     }
 
     public void setSecond(int s) {
-        setTime(this.hour, this.minute, s);
+        if ((s >= 0 && s < 60)) {
+            second = s;
+        } else {
+            System.err.println("the Second is invalid!!! Timer not set");
+        }
+    }
+
+    public void setTime(int h, int m, int s) {
+        setHour(h);
+        setMinute(m);
+        setSecond(s);
     }
 
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@getters
@@ -90,5 +98,6 @@ public class Time {
     public void finalize() {
         System.out.println("the time object with " + this.toString() + " property is distroyed.");
     }
+
 
 }

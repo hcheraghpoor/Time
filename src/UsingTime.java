@@ -37,6 +37,7 @@ public class UsingTime {
         }else{
             System.out.println("is not equal!!!");
         }
+        
         obj1.finalize();
 
     }
